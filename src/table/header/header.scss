@@ -1,0 +1,50 @@
+.bg-light {
+  .titleJ {
+    padding: 0.5rem 1.5rem 0 0;
+  }
+  .button {
+    position: relative;
+    width: fit-content;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 0.5rem 0.75rem;
+    bottom: 8rem;
+    left: -45%;
+    &:hover {
+      transition: 0.3s;
+      background-color: rgb(255, 255, 255);
+      border-radius: 15px;
+    }
+  }
+  padding: auto 10px;
+  .text {
+    margin: 0.5rem 0.65rem 0 0;
+  }
+  nav {
+    margin: 10px 0 0 0;
+    .holder {
+      height: 5rem;
+      label {
+        flex: 0.25;
+      }
+      input {
+        max-width: 15rem;
+        flex: 2;
+      }
+    }
+  }
+  .btn {
+    position: relative;
+    // bottom: 23%;
+    left: 15px;
+    margin: auto;
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    .icon {
+      position: absolute;
+      margin: -0.5rem;
+    }
+  }
+}
