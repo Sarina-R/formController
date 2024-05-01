@@ -7,8 +7,13 @@ export const Context = React.createContext();
 const url = "../../public/data.json";
 
 const Table = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const [searchCriteria, setSearchCriteria] = useState({
+    code: "",
+    lastName: "",
+    name: "",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,13 +32,25 @@ const Table = () => {
     fetchData();
   }, []);
 
+  const handleSearch = (code, lastName, name) => {
+    setSearchCriteria({ code, lastName, name });
+  };
+
+  const filteredData = data.filter((item) => {
+    return (
+      item.code.includes(searchCriteria.code) &&
+      item.lastName.includes(searchCriteria.lastName) &&
+      item.name.includes(searchCriteria.name)
+    );
+  });
+
   return (
     <div className="container">
       {error ? (
         <div>{error.message}</div>
       ) : data ? (
         <>
-          <Header />
+          <Header onSearch={handleSearch} />
           <table class="table table-hover">
             <thead>
               <tr>
@@ -47,9 +64,10 @@ const Table = () => {
                 <th scope="col">#</th>
               </tr>
             </thead>
-            {data.map((item) => {
+            {filteredData.map((item) => {
               return (
                 <Context.Provider
+                  key={item.id}
                   value={{
                     id: item.id,
                     name: item.name,

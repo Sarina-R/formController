@@ -28,6 +28,8 @@ const Header = ({ onSearch }) => {
             type="search"
             placeholder="کد ملی"
             aria-label="Search"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
           />
           <label className="col ">:کد ملی</label>
         </div>
@@ -37,6 +39,8 @@ const Header = ({ onSearch }) => {
             type="search"
             placeholder="نام خانوادگی"
             aria-label="Search"
+            value={last}
+            onChange={(e) => setLast(e.target.value)}
           />
           <label className="col ">:نام خانوادگی</label>
         </div>
@@ -46,6 +50,8 @@ const Header = ({ onSearch }) => {
             type="search"
             placeholder="نام"
             aria-label="Search"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <label className="col ">:نام</label>
         </div>
