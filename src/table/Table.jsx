@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TableData from "./tableData";
 import Header from "./header/Header";
+import Result from "./result/Result";
 
 export const Context = React.createContext();
 

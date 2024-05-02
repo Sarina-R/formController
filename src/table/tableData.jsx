@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "./Table";
 import "./table.scss";
 import Delete from "./delete/Delete";
@@ -31,7 +32,9 @@ const TableData = ({ setData }) => {
             <FaRegEdit />
           </i>
           <i className="icon">
-            <FaEye />
+            <Link className="eye" to={`/result/${value.id}`}>
+              <FaEye />
+            </Link>
           </i>
         </td>
         <td>{value.job}</td>
