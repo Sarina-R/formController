@@ -59,9 +59,15 @@ const Header = ({ onSearch }) => {
           <label className="col ">:نام</label>
         </div>
       </nav>
-      <button className="button" onClick={() => setAddUser(!addUser)}>
-        افزودن
-      </button>
+      {!addUser ? (
+        <button className="button1 " onClick={() => setAddUser(!addUser)}>
+          افزودن
+        </button>
+      ) : (
+        <button className="button1 " onClick={() => setAddUser(!addUser)}>
+          X
+        </button>
+      )}
       {addUser && <Add />}
     </div>
   );

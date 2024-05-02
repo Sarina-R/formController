@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "./Table";
 import "./table.scss";
+import Delete from "./delete/Delete";
 
 import { FaChartPie } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -8,26 +9,28 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaRegEdit } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 
-const TableData = () => {
+const TableData = ({ setData }) => {
   const value = useContext(Context);
   // console.log(value.name);
+
+  const [deleteItem, setDeleteItem] = useState(false);
   return (
     <tbody>
       <tr>
         <td className="icons">
-          <i>
+          <i className="icon">
             <FaChartPie />
           </i>
-          <i>
-            <MdDelete />
+          <i className="icon">
+            <MdDelete onClick={() => setDeleteItem(true)} />
           </i>
-          <i>
+          <i className="icon">
             <FaMapMarkerAlt />
           </i>
-          <i>
+          <i className="icon">
             <FaRegEdit />
           </i>
-          <i>
+          <i className="icon">
             <FaEye />
           </i>
         </td>
@@ -38,6 +41,7 @@ const TableData = () => {
         <td>{value.name}</td>
         <td>{value.id}</td>
       </tr>
+      {deleteItem && <Delete setDeleteItem={setDeleteItem} setData={setData} />}
     </tbody>
   );
 };

@@ -1,0 +1,28 @@
+.delete {
+  padding: 1rem;
+  width: 20rem;
+  height: 13rem;
+  background-color: rgb(247, 247, 247);
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  z-index: 1000;
+  .delete_title {
+    background-color: transparent;
+  }
+  .Dbtn {
+    margin: 3rem;
+    width: 3rem;
+    height: 3rem;
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+.close {
+  display: none;
+}

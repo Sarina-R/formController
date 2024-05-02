@@ -51,7 +51,8 @@ const Table = () => {
     );
   });
 
-  const contextValue = { data, addUser };
+  const contextValue = { data, addUser, setData };
+
   return (
     <Context.Provider value={contextValue}>
       <div className="container">
@@ -60,11 +61,10 @@ const Table = () => {
         ) : data ? (
           <>
             <Header onSearch={handleSearch} />
-            <table class="table table-hover">
+            <table className="table table-hover">
               <thead>
                 <tr>
                   <th scope="col">عملیات</th>
-
                   <th scope="col">شغل</th>
                   <th scope="col">کد ملی</th>
                   <th scope="col">نام پدر</th>
@@ -87,7 +87,7 @@ const Table = () => {
                       job: item.job,
                     }}
                   >
-                    <TableData />
+                    <TableData setData={setData} />
                   </Context.Provider>
                 );
               })}
