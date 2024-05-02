@@ -15,6 +15,13 @@ const Table = () => {
     name: "",
   });
 
+  const addUser = (newUserData) => {
+    setData((prevData) => [
+      ...prevData,
+      { ...newUserData, id: prevData.length + 1 },
+    ]);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -44,50 +51,53 @@ const Table = () => {
     );
   });
 
+  const contextValue = { data, addUser };
   return (
-    <div className="container">
-      {error ? (
-        <div>{error.message}</div>
-      ) : data ? (
-        <>
-          <Header onSearch={handleSearch} />
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">عملیات</th>
+    <Context.Provider value={contextValue}>
+      <div className="container">
+        {error ? (
+          <div>{error.message}</div>
+        ) : data ? (
+          <>
+            <Header onSearch={handleSearch} />
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">عملیات</th>
 
-                <th scope="col">شغل</th>
-                <th scope="col">کد ملی</th>
-                <th scope="col">نام پدر</th>
-                <th scope="col">نام خانوادگی</th>
-                <th scope="col">نام</th>
-                <th scope="col">#</th>
-              </tr>
-            </thead>
-            {filteredData.map((item) => {
-              return (
-                <Context.Provider
-                  key={item.id}
-                  value={{
-                    id: item.id,
-                    name: item.name,
-                    lastName: item.lastName,
-                    fathersName: item.fathersName,
-                    code: item.code,
-                    home: item.home,
-                    job: item.job,
-                  }}
-                >
-                  <TableData />
-                </Context.Provider>
-              );
-            })}
-          </table>
-        </>
-      ) : (
-        <>درحال بارگیری...</>
-      )}
-    </div>
+                  <th scope="col">شغل</th>
+                  <th scope="col">کد ملی</th>
+                  <th scope="col">نام پدر</th>
+                  <th scope="col">نام خانوادگی</th>
+                  <th scope="col">نام</th>
+                  <th scope="col">#</th>
+                </tr>
+              </thead>
+              {filteredData.map((item) => {
+                return (
+                  <Context.Provider
+                    key={item.id}
+                    value={{
+                      id: item.id,
+                      name: item.name,
+                      lastName: item.lastName,
+                      fathersName: item.fathersName,
+                      code: item.code,
+                      home: item.home,
+                      job: item.job,
+                    }}
+                  >
+                    <TableData />
+                  </Context.Provider>
+                );
+              })}
+            </table>
+          </>
+        ) : (
+          <>درحال بارگیری...</>
+        )}
+      </div>
+    </Context.Provider>
   );
 };
 

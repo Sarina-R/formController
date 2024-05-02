@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./header.scss";
 import { CiSearch } from "react-icons/ci";
+import Add from "./add/Add";
 
 const Header = ({ onSearch }) => {
   const [code, setCode] = useState("");
   const [name, setName] = useState("");
   const [last, setLast] = useState("");
+
+  const [addUser, setAddUser] = useState(false);
 
   const handleSearch = () => {
     onSearch(code, last, name);
@@ -56,7 +59,10 @@ const Header = ({ onSearch }) => {
           <label className="col ">:نام</label>
         </div>
       </nav>
-      <button className="button">افزودن</button>
+      <button className="button" onClick={() => setAddUser(!addUser)}>
+        افزودن
+      </button>
+      {addUser && <Add />}
     </div>
   );
 };
