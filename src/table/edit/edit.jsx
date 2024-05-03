@@ -18,6 +18,7 @@ const Edit = ({ setEditItem, updateData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateData(formData);
+    setEditItem(false);
   };
 
   return (

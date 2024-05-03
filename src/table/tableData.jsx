@@ -4,6 +4,7 @@ import { Context } from "./Table";
 import "./table.scss";
 import Delete from "./delete/Delete";
 import Edit from "./edit/Edit";
+import DataChart from "./chart/DataChart";
 
 import { FaChartPie } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -17,13 +18,14 @@ const TableData = ({ setData, updateData }) => {
 
   const [deleteItem, setDeleteItem] = useState(false);
   const [editItem, setEditItem] = useState(false);
+  const [chart, setChart] = useState(false);
 
   return (
     <tbody className="table-responsive">
       <tr>
         <td className="icons">
           <i className="icon">
-            <FaChartPie />
+            <FaChartPie onClick={() => setChart(true)} />
           </i>
           <i className="icon">
             <MdDelete onClick={() => setDeleteItem(true)} />
@@ -49,6 +51,7 @@ const TableData = ({ setData, updateData }) => {
       </tr>
       {editItem && <Edit setEditItem={setEditItem} updateData={updateData} />}
       {deleteItem && <Delete setDeleteItem={setDeleteItem} setData={setData} />}
+      {chart && <DataChart setChart={setChart} />}
     </tbody>
   );
 };
