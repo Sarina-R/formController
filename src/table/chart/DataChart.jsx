@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Chart from "react-apexcharts";
 import { Context } from "../Table";
 import "./chart.scss";
+import { MdClose } from "react-icons/md";
 
 const DataChart = ({ setChart }) => {
   const value = useContext(Context);
@@ -40,7 +41,9 @@ const DataChart = ({ setChart }) => {
 
   return (
     <div className="chart">
-      <button onClick={() => setChart(false)}>X</button>
+      <button onClick={() => setChart(false)}>
+        <MdClose />
+      </button>
       <Chart
         options={chartOptions}
         series={seriesData}

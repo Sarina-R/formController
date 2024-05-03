@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./header.scss";
 import { CiSearch } from "react-icons/ci";
 import Add from "./add/Add";
+import { MdClose } from "react-icons/md";
 
 const Header = ({ onSearch }) => {
   const [code, setCode] = useState("");
@@ -65,7 +66,7 @@ const Header = ({ onSearch }) => {
         </button>
       ) : (
         <button className="button1 " onClick={() => setAddUser(!addUser)}>
-          X
+          <MdClose />
         </button>
       )}
       {addUser && <Add />}

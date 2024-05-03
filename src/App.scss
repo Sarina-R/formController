@@ -4,3 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+@font-face {
+  font-family: "Vazir";
+  src: local("Vazir") url(../font/Vazir.ttf) format("truetype");
+}
+* {
+  font-family: Vazir;
+}

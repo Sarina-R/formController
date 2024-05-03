@@ -59,6 +59,18 @@ const Add = () => {
             onChange={handleChange}
           />
         </div>
+        {/* Input for code */}
+        <div className="inputSection">
+          <label className="col ">:کد ملی</label>
+          <input
+            class="form-control col mr-sm-2 m-1 "
+            type="text"
+            name="code"
+            placeholder="کد ملی"
+            value={newUser.code}
+            onChange={handleChange}
+          />
+        </div>
         {/* Input for fathersName */}
         <div className="inputSection">
           <label className="col ">:نام پدر</label>
