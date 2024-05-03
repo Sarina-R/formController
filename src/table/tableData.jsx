@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "./Table";
 import "./table.scss";
 import Delete from "./delete/Delete";
+import Edit from "./edit/Edit";
 
 import { FaChartPie } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -10,11 +11,13 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaRegEdit } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 
-const TableData = ({ setData }) => {
+const TableData = ({ setData, updateData }) => {
   const value = useContext(Context);
   // console.log(value.name);
 
   const [deleteItem, setDeleteItem] = useState(false);
+  const [editItem, setEditItem] = useState(false);
+
   return (
     <tbody>
       <tr>
@@ -29,7 +32,7 @@ const TableData = ({ setData }) => {
             <FaMapMarkerAlt />
           </i>
           <i className="icon">
-            <FaRegEdit />
+            <FaRegEdit onClick={() => setEditItem(true)} />
           </i>
           <i className="icon">
             <Link className="eye" to={`/result/${value.id}`}>
@@ -44,6 +47,7 @@ const TableData = ({ setData }) => {
         <td>{value.name}</td>
         <td>{value.id}</td>
       </tr>
+      {editItem && <Edit setEditItem={setEditItem} updateData={updateData} />}
       {deleteItem && <Delete setDeleteItem={setDeleteItem} setData={setData} />}
     </tbody>
   );

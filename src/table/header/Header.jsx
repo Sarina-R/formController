@@ -19,7 +19,7 @@ const Header = ({ onSearch }) => {
       <h2 className="titleJ">جستجو</h2>
       <nav className="row justify-content-center">
         <button
-          class="btn btn-outline-success"
+          className="btn btn-outline-success"
           type="submit"
           onClick={handleSearch}
         >
@@ -27,7 +27,7 @@ const Header = ({ onSearch }) => {
         </button>
         <div className="col holder d-flex align-items-center justify-content-center">
           <input
-            class="form-control col mr-sm-2 m-1 "
+            className="form-control col mr-sm-2 m-1 "
             type="search"
             placeholder="کد ملی"
             aria-label="Search"
@@ -38,7 +38,7 @@ const Header = ({ onSearch }) => {
         </div>
         <div className="col holder d-flex align-items-center justify-content-center">
           <input
-            class="form-control col mr-sm-2 m-1 "
+            className="form-control col mr-sm-2 m-1 "
             type="search"
             placeholder="نام خانوادگی"
             aria-label="Search"
@@ -49,7 +49,7 @@ const Header = ({ onSearch }) => {
         </div>
         <div className="col holder d-flex align-items-center justify-content-center">
           <input
-            class="form-control col mr-sm-2 m-1 "
+            className="form-control col mr-sm-2 m-1 "
             type="search"
             placeholder="نام"
             aria-label="Search"

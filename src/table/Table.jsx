@@ -23,6 +23,12 @@ const Table = () => {
     ]);
   };
 
+  const updateData = (editedData) => {
+    setData((prevData) =>
+      prevData.map((item) => (item.id === editedData.id ? editedData : item))
+    );
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,7 +58,7 @@ const Table = () => {
     );
   });
 
-  const contextValue = { data, addUser, setData };
+  const contextValue = { data, addUser, setData, updateData };
 
   return (
     <Context.Provider value={contextValue}>
@@ -88,7 +94,7 @@ const Table = () => {
                       job: item.job,
                     }}
                   >
-                    <TableData setData={setData} />
+                    <TableData setData={setData} updateData={updateData} />
                   </Context.Provider>
                 );
               })}
