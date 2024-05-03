@@ -12,3 +12,17 @@
     }
   }
 }
+@media only screen and (max-width: 750px) {
+  .table {
+    overflow: auto;
+    display: inline-block;
+    .table-responsive {
+      overflow: scroll;
+    }
+
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+}

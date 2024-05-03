@@ -19,7 +19,7 @@ const TableData = ({ setData, updateData }) => {
   const [editItem, setEditItem] = useState(false);
 
   return (
-    <tbody>
+    <tbody className="table-responsive">
       <tr>
         <td className="icons">
           <i className="icon">

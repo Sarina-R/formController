@@ -9,7 +9,7 @@
     border-radius: 20px;
     padding: 0.5rem 0.75rem;
     bottom: 8rem;
-    left: -45%;
+    left: -43%;
     &:hover {
       transition: 0.3s;
       background-color: rgb(255, 255, 255);
@@ -45,6 +45,31 @@
     .icon {
       position: absolute;
       margin: -0.5rem;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .bg-light {
+      margin-bottom: 100rem;
+      left: 16%;
+    }
+    .btn {
+      position: absolute;
+      top: 20rem;
+      left: 16%;
+    }
+    .button1 {
+      left: -39%;
+      top: -18rem;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .button1 {
+      left: -30%;
+    }
+    .holder {
+      label {
+        display: none;
+      }
     }
   }
 }

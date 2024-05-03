@@ -25,18 +25,18 @@ const Header = ({ onSearch }) => {
         >
           <CiSearch className="icon" />
         </button>
-        <div className="col holder d-flex align-items-center justify-content-center">
+        <div className="col-md-4 col-sm-12 row holder d-flex align-items-center justify-content-center">
           <input
-            className="form-control col mr-sm-2 m-1 "
+            className="form-control  mr-sm-2 m-1 "
             type="search"
             placeholder="کد ملی"
             aria-label="Search"
             value={code}
             onChange={(e) => setCode(e.target.value)}
           />
-          <label className="col ">:کد ملی</label>
+          <label className=" ">:کد ملی</label>
         </div>
-        <div className="col holder d-flex align-items-center justify-content-center">
+        <div className="col-md-4 row holder d-flex align-items-center justify-content-center">
           <input
             className="form-control col mr-sm-2 m-1 "
             type="search"
@@ -47,7 +47,7 @@ const Header = ({ onSearch }) => {
           />
           <label className="col ">:نام خانوادگی</label>
         </div>
-        <div className="col holder d-flex align-items-center justify-content-center">
+        <div className="col-md-4 row holder d-flex align-items-center justify-content-center">
           <input
             className="form-control col mr-sm-2 m-1 "
             type="search"
