@@ -37,7 +37,7 @@ const TableData = ({ setData, updateData }) => {
             <FaRegEdit onClick={() => setEditItem(true)} />
           </i>
           <i className="icon">
-            <Link className="eye" to={`/result/${value.id}`}>
+            <Link className="eye" to={`/formController/result/${value.id}`}>
               <FaEye />
             </Link>
           </i>
