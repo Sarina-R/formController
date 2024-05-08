@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Table />} />
-        <Route path="/formController" element={<Table />} />
+        <Route path="/formController/" element={<Table />} />
         <Route path="/formController/result/:id" element={<Result />} />
       </Routes>
     </BrowserRouter>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "./Table";
 import "./table.scss";
 import Delete from "./delete/Delete";
-import Edit from "./edit/Edit";
+import Edit from "./edit/edit";
 import DataChart from "./chart/DataChart";
 
 import { FaChartPie } from "react-icons/fa";
