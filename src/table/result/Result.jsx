@@ -6,7 +6,7 @@ const Result = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
 
-  const url = "../../public/data.json";
+  const url = "../../data.json";
 
   useEffect(() => {
     const fetchData = async () => {

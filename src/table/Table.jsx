@@ -5,7 +5,7 @@ import Result from "./result/Result";
 
 export const Context = React.createContext();
 
-const url = "../../public/data.json";
+const url = "../../data.json";
 
 const Table = () => {
   const [data, setData] = useState([]);
